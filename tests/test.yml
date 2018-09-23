@@ -2,7 +2,9 @@
 - hosts: tensor
   become: true
   roles:
-    - ../nvidia-docker
+    - tangentspace.nvidia_driver
+    - geerlingguy.docker
+    - ../..
 
   tasks:
 

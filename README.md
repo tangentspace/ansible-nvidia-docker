@@ -3,17 +3,19 @@ Ansible NVIDIA Container Runtime Role
 
 Install the [NVIDIA container runtime for Docker](https://github.com/NVIDIA/nvidia-docker).
 
-Dependencies
+Requirements
 ------------
 
-Docker is required, so this role pulls in geerlingguy.docker to install it.
+The container runtime requires Docker and the NVIDIA driver to be installed.
 
 Example Playbook
 ----------------
 ```yml
 - hosts: gpu-servers
   roles:
-     - tangentspace.nvidia_docker
+    - geerlingguy.docker
+    - tangentspace.nvidia_driver
+    - tangentspace.nvidia_docker
 ```
 
 License
