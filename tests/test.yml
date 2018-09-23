@@ -13,6 +13,7 @@
   #
   - name: run nvidia-smi in container
     command: docker run --runtime=nvidia --rm nvidia/cuda:{{nvidia_cuda_version}}-runtime-ubuntu18.04 nvidia-smi
+    changed_when: false
     register: nvidia_smi_result
 
   - debug:
