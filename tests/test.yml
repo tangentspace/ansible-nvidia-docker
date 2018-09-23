@@ -1,0 +1,19 @@
+---
+- hosts: tensor
+  become: true
+  roles:
+    - ../nvidia-docker
+
+  tasks:
+
+  # Running Docker container as a command because the docker_container module
+  # doesn't yet support the --runtime flag. There's a PR open to add this
+  # funtionality here:
+  # https://github.com/ansible/ansible/pull/40695
+  #
+  - name: run nvidia-smi in container
+    command: docker run --runtime=nvidia --rm nvidia/cuda:{{nvidia_cuda_version}}-runtime-ubuntu18.04 nvidia-smi
+    register: nvidia_smi_result
+
+  - debug:
+      var: nvidia_smi_result.stdout_lines
