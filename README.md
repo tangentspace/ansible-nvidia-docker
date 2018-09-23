@@ -13,7 +13,7 @@ Example Playbook
 ```yml
 - hosts: gpu-servers
   roles:
-     - tangentspace.nvidia-docker
+     - tangentspace.nvidia_docker
 ```
 
 License

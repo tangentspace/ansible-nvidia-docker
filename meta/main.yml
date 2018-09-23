@@ -1,5 +1,5 @@
 galaxy_info:
-  role_name: nvidia-docker
+  role_name: nvidia_docker
   author: Keith Clawson
   description: Install NVIDIA container runtime for Docker.
   license: MIT
